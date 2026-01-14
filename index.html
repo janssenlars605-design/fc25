@@ -55,6 +55,19 @@
             margin-bottom: 10px;
         }
         
+        .domain-badge {
+            display: inline-block;
+            background: rgba(255, 107, 0, 0.2);
+            color: #FFD700;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 15px;
+            border: 2px solid rgba(255, 107, 0, 0.4);
+            letter-spacing: 1px;
+        }
+        
         .subtitle {
             font-size: 24px;
             color: #b8b8d1;
@@ -135,6 +148,11 @@
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(255, 107, 0, 0.4);
             margin-bottom: 30px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            position: relative;
+            overflow: hidden;
         }
         
         .download-btn:hover {
@@ -235,6 +253,21 @@
             font-weight: 600;
         }
         
+        .google-drive-notice {
+            background: rgba(66, 133, 244, 0.1);
+            border: 1px solid rgba(66, 133, 244, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .google-drive-notice i {
+            color: #4285F4;
+            margin-right: 10px;
+        }
+        
         @media (max-width: 768px) {
             .game-title {
                 font-size: 36px;
@@ -252,18 +285,20 @@
             .download-icon {
                 font-size: 60px;
             }
+            
+            .domain-badge {
+                font-size: 16px;
+                padding: 8px 20px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header class="header">
-		<h1 >FC25.GAMEPC.TOP</h1>
+            <div class="domain-badge">FC25.GAMEPC.TOP</div>
             <div class="logo">
-			
                 <i class="fas fa-futbol logo-icon"></i>
-				
-				
                 <h1 class="game-title">EA SPORTS FC 25</h1>
             </div>
             <p class="subtitle">Free Download & Play On Your PC</p>
@@ -271,7 +306,6 @@
         
         <div class="main-content">
             <div class="game-image">
-                <!-- Placeholder for EA SPORTS FC 25 image -->
                 <img src="fc25.jpg" alt="EA SPORTS FC 25 Game Cover">
             </div>
             
@@ -279,10 +313,15 @@
                 <i class="fas fa-download download-icon"></i>
                 <h2 class="download-title">Download Now</h2>
                 
-                <a href="https://drive.google.com/file/d/1N8z-d44eV68nUYJOGVftZGqQGygNCRKM/view" class="download-btn" id="downloadButton">
+                <button class="download-btn" id="downloadButton">
                     <i class="fas fa-cloud-download-alt btn-icon"></i>
                     DOWNLOAD FC 25
-                </a>
+                </button>
+                
+                <div class="google-drive-notice">
+                    <i class="fab fa-google-drive"></i>
+                    File hosted on Google Drive. Click to open in new tab.
+                </div>
                 
                 <div class="system-requirements">
                     <h3 class="system-title">System Requirements</h3>
@@ -331,27 +370,37 @@
     </div>
     
     <script>
+        // Google Drive link
+        const GOOGLE_DRIVE_LINK = "https://drive.google.com/file/d/1N8z-d44eV68nUYJOGVftZGqQGygNCRKM/view";
+        
         // Add functionality to the download button
-        document.getElementById('downloadButton').addEventListener('click', function(e) {
-            e.preventDefault();
+        document.getElementById('downloadButton').addEventListener('click', function() {
+            const button = this;
+            const originalText = button.innerHTML;
             
-            // Show a download simulation
-            const originalText = this.innerHTML;
-            this.innerHTML = '<i class="fas fa-spinner fa-spin btn-icon"></i> DOWNLOADING...';
-            this.style.background = 'linear-gradient(to right, #4CAF50, #45a049)';
+            // Show loading animation
+            button.innerHTML = '<i class="fas fa-spinner fa-spin btn-icon"></i> PREPARING...';
+            button.style.background = 'linear-gradient(to right, #FF8C00, #FFA500)';
+            button.disabled = true;
             
-            // Simulate download process
+            // Simulate preparation time
             setTimeout(() => {
-                this.innerHTML = '<i class="fas fa-check btn-icon"></i> DOWNLOAD STARTED!';
-                this.style.background = 'linear-gradient(to right, #4CAF50, #45a049)';
+                // Open Google Drive in new tab
+                window.open(GOOGLE_DRIVE_LINK, '_blank', 'noopener,noreferrer');
                 
-                // Reset button after 3 seconds
+                // Show success message
+                button.innerHTML = '<i class="fas fa-external-link-alt btn-icon"></i> OPENING...';
+                button.style.background = 'linear-gradient(to right, #4CAF50, #45a049)';
+                
+                // Reset button after 2 seconds
                 setTimeout(() => {
-                    this.innerHTML = originalText;
-                    this.style.background = 'linear-gradient(to right, #FF6B00, #FF8C00)';
-                    alert('Your download of EA SPORTS FC 25 has started! Check your downloads folder.');
-                }, 3000);
-            }, 2000);
+                    button.innerHTML = originalText;
+                    button.style.background = 'linear-gradient(to right, #FF6B00, #FF8C00)';
+                    button.disabled = false;
+                    
+                    
+                }, 2000);
+            }, 1500);
         });
         
         // Add some interactive effects
@@ -365,10 +414,32 @@
                 this.style.boxShadow = 'none';
             });
         });
+        
+        // Add click effect to Google Drive notice
+        const driveNotice = document.querySelector('.google-drive-notice');
+        driveNotice.addEventListener('click', function() {
+            window.open(GOOGLE_DRIVE_LINK, '_blank', 'noopener,noreferrer');
+        });
+        
+        // Add visual feedback for Google Drive notice
+        driveNotice.style.cursor = 'pointer';
+        driveNotice.addEventListener('mouseenter', function() {
+            this.style.background = 'rgba(66, 133, 244, 0.2)';
+            this.style.transform = 'translateY(-2px)';
+        });
+        
+        driveNotice.addEventListener('mouseleave', function() {
+            this.style.background = 'rgba(66, 133, 244, 0.1)';
+            this.style.transform = 'translateY(0)';
+        });
+        
+        // Keyboard shortcut for download (Ctrl+D or Cmd+D)
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'd') {
+                e.preventDefault();
+                document.getElementById('downloadButton').click();
+            }
+        });
     </script>
 </body>
-
 </html>
-
-
-
