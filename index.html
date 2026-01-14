@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EA SPORTS FC 25 Free Download & Play On Your PC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a0a2a 0%, #1a1a3a 100%);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .logo-icon {
+            font-size: 42px;
+            color: #FF6B00;
+        }
+        
+        .game-title {
+            font-size: 48px;
+            font-weight: 900;
+            background: linear-gradient(to right, #FF6B00, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 24px;
+            color: #b8b8d1;
+            margin-bottom: 30px;
+        }
+        
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .game-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+        
+        .game-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .game-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .download-section {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px 30px;
+            border: 1px solid rgba(255, 107, 0, 0.2);
+        }
+        
+        .download-icon {
+            font-size: 70px;
+            color: #FF6B00;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .download-title {
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #FFD700;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(to right, #FF6B00, #FF8C00);
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            padding: 20px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.4);
+            margin-bottom: 30px;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 107, 0, 0.6);
+            background: linear-gradient(to right, #FF8C00, #FFA500);
+        }
+        
+        .btn-icon {
+            font-size: 28px;
+        }
+        
+        .system-requirements {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 20px;
+            width: 100%;
+        }
+        
+        .system-title {
+            font-size: 22px;
+            color: #FFD700;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #FF6B00;
+            padding-bottom: 8px;
+        }
+        
+        .requirements-list {
+            list-style-type: none;
+        }
+        
+        .requirements-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .req-label {
+            color: #b8b8d1;
+        }
+        
+        .req-value {
+            color: white;
+            font-weight: 600;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .feature {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 107, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 36px;
+            color: #FF6B00;
+            margin-bottom: 15px;
+        }
+        
+        .feature-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #FFD700;
+        }
+        
+        .feature-desc {
+            color: #b8b8d1;
+            line-height: 1.5;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #888;
+            font-size: 14px;
+        }
+        
+        .warning {
+            color: #FF6B00;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .game-title {
+                font-size: 36px;
+            }
+            
+            .subtitle {
+                font-size: 20px;
+            }
+            
+            .download-btn {
+                font-size: 20px;
+                padding: 18px 40px;
+            }
+            
+            .download-icon {
+                font-size: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-futbol logo-icon"></i>
+                <h1 class="game-title">EA SPORTS FC 25</h1>
+            </div>
+            <p class="subtitle">Free Download & Play On Your PC</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="game-image">
+                <!-- Placeholder for EA SPORTS FC 25 image -->
+                <img src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="EA SPORTS FC 25 Game Cover">
+            </div>
+            
+            <div class="download-section">
+                <i class="fas fa-download download-icon"></i>
+                <h2 class="download-title">Download Now</h2>
+                
+                <a href="#" class="download-btn" id="downloadButton">
+                    <i class="fas fa-cloud-download-alt btn-icon"></i>
+                    DOWNLOAD FC 25
+                </a>
+                
+                <div class="system-requirements">
+                    <h3 class="system-title">System Requirements</h3>
+                    <ul class="requirements-list">
+                        <li><span class="req-label">OS:</span><span class="req-value">Windows 10 64-bit</span></li>
+                        <li><span class="req-label">Processor:</span><span class="req-value">Intel Core i5-6600K</span></li>
+                        <li><span class="req-label">Memory:</span><span class="req-value">8 GB RAM</span></li>
+                        <li><span class="req-label">Graphics:</span><span class="req-value">NVIDIA GTX 1050 Ti</span></li>
+                        <li><span class="req-label">Storage:</span><span class="req-value">50 GB available space</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-star feature-icon"></i>
+                <h3 class="feature-title">HyperMotionV Technology</h3>
+                <p class="feature-desc">Experience the most realistic football gameplay with advanced motion capture technology.</p>
+            </div>
+            
+            <div class="feature">
+                <i class="fas fa-users feature-icon"></i>
+                <h3 class="feature-title">Ultimate Team</h3>
+                <p class="feature-desc">Build your dream squad with thousands of players in the most popular mode.</p>
+            </div>
+            
+            <div class="feature">
+                <i class="fas fa-trophy feature-icon"></i>
+                <h3 class="feature-title">Career Mode</h3>
+                <p class="feature-desc">Live your football journey as a player or manager with enhanced storylines.</p>
+            </div>
+            
+            <div class="feature">
+                <i class="fas fa-globe feature-icon"></i>
+                <h3 class="feature-title">Cross-Platform Play</h3>
+                <p class="feature-desc">Play with friends across different platforms in various game modes.</p>
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <p>© 2024 Electronic Arts Inc. EA SPORTS FC 25 is a trademark of Electronic Arts Inc.</p>
+            <p class="warning">This is a fan-made page for demonstration purposes only.</p>
+            <p>For the official game, please visit the EA Sports website.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Add functionality to the download button
+        document.getElementById('downloadButton').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Show a download simulation
+            const originalText = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-spinner fa-spin btn-icon"></i> DOWNLOADING...';
+            this.style.background = 'linear-gradient(to right, #4CAF50, #45a049)';
+            
+            // Simulate download process
+            setTimeout(() => {
+                this.innerHTML = '<i class="fas fa-check btn-icon"></i> DOWNLOAD STARTED!';
+                this.style.background = 'linear-gradient(to right, #4CAF50, #45a049)';
+                
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                    this.style.background = 'linear-gradient(to right, #FF6B00, #FF8C00)';
+                    alert('Your download of EA SPORTS FC 25 has started! Check your downloads folder.');
+                }, 3000);
+            }, 2000);
+        });
+        
+        // Add some interactive effects
+        const features = document.querySelectorAll('.feature');
+        features.forEach(feature => {
+            feature.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 10px 20px rgba(255, 107, 0, 0.3)';
+            });
+            
+            feature.addEventListener('mouseleave', function() {
+                this.style.boxShadow = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
